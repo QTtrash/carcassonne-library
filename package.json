@@ -1,0 +1,36 @@
+{
+  "name": "carcassonne-library",
+  "version": "1.0.0",
+  "description": "A TypeScript library implementation for the classic board game",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "prepublishOnly": "",
+    "preversion": "",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QTtrash/carcassonne-library.git"
+  },
+  "keywords": [
+    "Carcassonne",
+    "Library",
+    "Board game",
+    "Typescript"
+  ],
+  "author": "Suren Mouchsiadis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QTtrash/carcassonne-library/issues"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "homepage": "https://github.com/QTtrash/carcassonne-library#readme",
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
+}
