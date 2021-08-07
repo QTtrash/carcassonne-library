@@ -1,3 +1,5 @@
+import Meeple from "../meeple";
+
 export enum EdgeType {
   BURG = "BURG",
   GRASS = "GRASS",
@@ -11,6 +13,7 @@ export let deck: Tile[] = [];
 
 export default class Tile {
   contains: EdgeType[];
+  meeple?: Meeple;
 
   connectsNorth: EdgeType;
   connectsSouth: EdgeType;
@@ -29,6 +32,16 @@ export default class Tile {
     this.connectsSouth = connectsSouth;
     this.connectsWest = connectsWest;
     this.connectsEast = connectsEast;
+    this.meeple = undefined;
+  }
+
+  toString() {
+    return `Current Tile contains ${this.contains.toString()}. 
+            \n Connects to ${this.connectsNorth} on the north side;
+            \n Connects to ${this.connectsSouth} on the south side;
+            \n Connects to ${this.connectsWest} on the west side;
+            \n Connects to ${this.connectsEast} on the east side;
+            \n ${this.meeple ? 'And also contains a Meeple!' : 'And has no meeple'}`
   }
 }
 
