@@ -444,3 +444,274 @@ deck.push(
 );
 
 // End of fourth row
+
+deck.push(
+  new Tile(
+    [EdgeType.BURG, EdgeType.SHIELD],
+    EdgeType.BURG,
+    EdgeType.GRASS,
+    EdgeType.BURG,
+    EdgeType.BURG
+  )
+);
+
+deck.push(
+  new Tile(
+    [EdgeType.BURG],
+    EdgeType.BURG,
+    EdgeType.GRASS,
+    EdgeType.BURG,
+    EdgeType.BURG
+  )
+);
+deck.push(
+  new Tile(
+    [EdgeType.BURG],
+    EdgeType.BURG,
+    EdgeType.GRASS,
+    EdgeType.BURG,
+    EdgeType.BURG
+  )
+);
+deck.push(
+  new Tile(
+    [EdgeType.BURG],
+    EdgeType.BURG,
+    EdgeType.GRASS,
+    EdgeType.BURG,
+    EdgeType.BURG
+  )
+);
+
+deck.push(
+  new Tile(
+    [EdgeType.BURG, EdgeType.SHIELD],
+    EdgeType.BURG,
+    EdgeType.ROAD,
+    EdgeType.BURG,
+    EdgeType.BURG
+  )
+);
+deck.push(
+  new Tile(
+    [EdgeType.BURG, EdgeType.SHIELD],
+    EdgeType.BURG,
+    EdgeType.ROAD,
+    EdgeType.BURG,
+    EdgeType.BURG
+  )
+);
+
+deck.push(
+  new Tile(
+    [EdgeType.BURG],
+    EdgeType.BURG,
+    EdgeType.ROAD,
+    EdgeType.BURG,
+    EdgeType.BURG
+  )
+);
+
+// End of fifth row
+
+deck.push(
+  new Tile(
+    [EdgeType.ROAD],
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.GRASS,
+    EdgeType.GRASS
+  )
+);
+deck.push(
+  new Tile(
+    [EdgeType.ROAD],
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.GRASS,
+    EdgeType.GRASS
+  )
+);
+deck.push(
+  new Tile(
+    [EdgeType.ROAD],
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.GRASS,
+    EdgeType.GRASS
+  )
+);
+deck.push(
+  new Tile(
+    [EdgeType.ROAD],
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.GRASS,
+    EdgeType.GRASS
+  )
+);
+deck.push(
+  new Tile(
+    [EdgeType.ROAD],
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.GRASS,
+    EdgeType.GRASS
+  )
+);
+deck.push(
+  new Tile(
+    [EdgeType.ROAD],
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.GRASS,
+    EdgeType.GRASS
+  )
+);
+deck.push(
+  new Tile(
+    [EdgeType.ROAD],
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.GRASS,
+    EdgeType.GRASS
+  )
+);
+deck.push(
+  new Tile(
+    [EdgeType.ROAD],
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.GRASS,
+    EdgeType.GRASS
+  )
+);
+
+deck.push(
+  new Tile(
+    [EdgeType.ROAD],
+    EdgeType.GRASS,
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.GRASS
+  )
+);
+deck.push(
+  new Tile(
+    [EdgeType.ROAD],
+    EdgeType.GRASS,
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.GRASS
+  )
+);
+deck.push(
+  new Tile(
+    [EdgeType.ROAD],
+    EdgeType.GRASS,
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.GRASS
+  )
+);
+deck.push(
+  new Tile(
+    [EdgeType.ROAD],
+    EdgeType.GRASS,
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.GRASS
+  )
+);
+deck.push(
+  new Tile(
+    [EdgeType.ROAD],
+    EdgeType.GRASS,
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.GRASS
+  )
+);
+deck.push(
+  new Tile(
+    [EdgeType.ROAD],
+    EdgeType.GRASS,
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.GRASS
+  )
+);
+deck.push(
+  new Tile(
+    [EdgeType.ROAD],
+    EdgeType.GRASS,
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.GRASS
+  )
+);
+deck.push(
+  new Tile(
+    [EdgeType.ROAD],
+    EdgeType.GRASS,
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.GRASS
+  )
+);
+deck.push(
+  new Tile(
+    [EdgeType.ROAD],
+    EdgeType.GRASS,
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.GRASS
+  )
+);
+
+deck.push(
+  new Tile(
+    [EdgeType.ROAD, EdgeType.VILLAGE],
+    EdgeType.GRASS,
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.ROAD
+  )
+);
+deck.push(
+  new Tile(
+    [EdgeType.ROAD, EdgeType.VILLAGE],
+    EdgeType.GRASS,
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.ROAD
+  )
+);
+deck.push(
+  new Tile(
+    [EdgeType.ROAD, EdgeType.VILLAGE],
+    EdgeType.GRASS,
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.ROAD
+  )
+);
+deck.push(
+  new Tile(
+    [EdgeType.ROAD, EdgeType.VILLAGE],
+    EdgeType.GRASS,
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.ROAD
+  )
+);
+
+deck.push(
+  new Tile(
+    [EdgeType.ROAD, EdgeType.VILLAGE],
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.ROAD,
+    EdgeType.ROAD
+  )
+);
