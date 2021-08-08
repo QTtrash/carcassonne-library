@@ -1,5 +1,10 @@
 import Meeple from "../meeple";
+import PlayTable, { Position } from "../playTable";
 
+/**
+ * Enum for storing different edgetypes
+ * that the tile can contain
+ */
 export enum EdgeType {
   BURG = "BURG",
   GRASS = "GRASS",
@@ -9,9 +14,23 @@ export enum EdgeType {
   VILLAGE = "VILLAGE",
 }
 
+/**
+ * deck that's being exported to the main library class
+ * is being filled at the end of the file
+ */
 export let deck: Tile[] = [];
 
+/**
+ * Tile class used for storing the tile information in the playTable
+ */
 export default class Tile {
+  /**
+   * Class attributes
+   * Contains - for storing the Enum-objects that the tile contains
+   * used for further isComplete and scoring
+   * Meeple - to check whether the tile is occupied by the meeple.
+   * connectsX - to see what it is able to connect to on the X edge
+   */
   contains: EdgeType[];
   meeple?: Meeple;
 
@@ -25,7 +44,7 @@ export default class Tile {
     connectsNorth: EdgeType,
     connectsSouth: EdgeType,
     connectsWest: EdgeType,
-    connectsEast: EdgeType
+    connectsEast: EdgeType,
   ) {
     this.contains = contains;
     this.connectsNorth = connectsNorth;
@@ -35,13 +54,30 @@ export default class Tile {
     this.meeple = undefined;
   }
 
+  /**
+   * Used to see whether a tile is completed
+   * And if it is remove a meeple and return it a player it belongs to
+   * Currently not implemented, and I also could not find any implementation online
+   */
+  isCompleted(table: PlayTable, pos: Position, type: EdgeType) {
+    let tile = table.coordinates[pos.y][pos.x];
+
+    if (tile instanceof Tile) {
+      return;
+    } else {
+      return `The tile is free`;
+    }
+  }
+
   toString() {
     return `Current Tile contains ${this.contains.toString()}. 
             \n Connects to ${this.connectsNorth} on the north side;
             \n Connects to ${this.connectsSouth} on the south side;
             \n Connects to ${this.connectsWest} on the west side;
             \n Connects to ${this.connectsEast} on the east side;
-            \n ${this.meeple ? 'And also contains a Meeple!' : 'And has no meeple'}`
+            \n ${
+              this.meeple ? "And also contains a Meeple!" : "And has no meeple"
+            }`;
   }
 }
 
@@ -53,8 +89,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.ROAD,
     EdgeType.GRASS,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -62,8 +98,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.ROAD,
     EdgeType.GRASS,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 
 deck.push(
@@ -72,8 +108,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.GRASS,
     EdgeType.GRASS,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -81,8 +117,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.GRASS,
     EdgeType.GRASS,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -90,8 +126,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.GRASS,
     EdgeType.GRASS,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -99,8 +135,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.GRASS,
     EdgeType.GRASS,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 
 deck.push(
@@ -109,8 +145,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.BURG,
     EdgeType.BURG,
-    EdgeType.BURG
-  )
+    EdgeType.BURG,
+  ),
 );
 
 deck.push(
@@ -119,8 +155,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.GRASS,
     EdgeType.ROAD,
-    EdgeType.ROAD
-  )
+    EdgeType.ROAD,
+  ),
 );
 deck.push(
   new Tile(
@@ -128,8 +164,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.GRASS,
     EdgeType.ROAD,
-    EdgeType.ROAD
-  )
+    EdgeType.ROAD,
+  ),
 );
 deck.push(
   new Tile(
@@ -137,8 +173,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.GRASS,
     EdgeType.ROAD,
-    EdgeType.ROAD
-  )
+    EdgeType.ROAD,
+  ),
 );
 deck.push(
   new Tile(
@@ -146,8 +182,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.GRASS,
     EdgeType.ROAD,
-    EdgeType.ROAD
-  )
+    EdgeType.ROAD,
+  ),
 );
 
 //End of first row
@@ -158,8 +194,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.GRASS,
     EdgeType.GRASS,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -167,8 +203,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.GRASS,
     EdgeType.GRASS,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -176,8 +212,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.GRASS,
     EdgeType.GRASS,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -185,8 +221,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.GRASS,
     EdgeType.GRASS,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -194,8 +230,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.GRASS,
     EdgeType.GRASS,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 
 deck.push(
@@ -204,8 +240,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.GRASS,
     EdgeType.BURG,
-    EdgeType.BURG
-  )
+    EdgeType.BURG,
+  ),
 );
 deck.push(
   new Tile(
@@ -213,8 +249,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.GRASS,
     EdgeType.BURG,
-    EdgeType.BURG
-  )
+    EdgeType.BURG,
+  ),
 );
 
 deck.push(
@@ -223,8 +259,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.GRASS,
     EdgeType.BURG,
-    EdgeType.BURG
-  )
+    EdgeType.BURG,
+  ),
 );
 
 deck.push(
@@ -233,8 +269,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.GRASS,
     EdgeType.BURG,
-    EdgeType.BURG
-  )
+    EdgeType.BURG,
+  ),
 );
 deck.push(
   new Tile(
@@ -242,8 +278,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.GRASS,
     EdgeType.BURG,
-    EdgeType.BURG
-  )
+    EdgeType.BURG,
+  ),
 );
 deck.push(
   new Tile(
@@ -251,8 +287,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.GRASS,
     EdgeType.BURG,
-    EdgeType.BURG
-  )
+    EdgeType.BURG,
+  ),
 );
 
 // End of second row
@@ -263,8 +299,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.GRASS,
     EdgeType.GRASS,
-    EdgeType.BURG
-  )
+    EdgeType.BURG,
+  ),
 );
 deck.push(
   new Tile(
@@ -272,8 +308,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.GRASS,
     EdgeType.GRASS,
-    EdgeType.BURG
-  )
+    EdgeType.BURG,
+  ),
 );
 
 deck.push(
@@ -282,8 +318,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.ROAD,
     EdgeType.GRASS,
-    EdgeType.ROAD
-  )
+    EdgeType.ROAD,
+  ),
 );
 deck.push(
   new Tile(
@@ -291,8 +327,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.ROAD,
     EdgeType.GRASS,
-    EdgeType.ROAD
-  )
+    EdgeType.ROAD,
+  ),
 );
 deck.push(
   new Tile(
@@ -300,8 +336,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.ROAD,
     EdgeType.GRASS,
-    EdgeType.ROAD
-  )
+    EdgeType.ROAD,
+  ),
 );
 
 deck.push(
@@ -310,8 +346,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.ROAD,
     EdgeType.ROAD,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -319,8 +355,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.ROAD,
     EdgeType.ROAD,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -328,8 +364,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.ROAD,
     EdgeType.ROAD,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 
 deck.push(
@@ -338,8 +374,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.ROAD,
     EdgeType.ROAD,
-    EdgeType.ROAD
-  )
+    EdgeType.ROAD,
+  ),
 );
 deck.push(
   new Tile(
@@ -347,8 +383,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.ROAD,
     EdgeType.ROAD,
-    EdgeType.ROAD
-  )
+    EdgeType.ROAD,
+  ),
 );
 deck.push(
   new Tile(
@@ -356,8 +392,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.ROAD,
     EdgeType.ROAD,
-    EdgeType.ROAD
-  )
+    EdgeType.ROAD,
+  ),
 );
 
 // End of third row
@@ -368,8 +404,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.GRASS,
     EdgeType.GRASS,
-    EdgeType.BURG
-  )
+    EdgeType.BURG,
+  ),
 );
 deck.push(
   new Tile(
@@ -377,8 +413,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.GRASS,
     EdgeType.GRASS,
-    EdgeType.BURG
-  )
+    EdgeType.BURG,
+  ),
 );
 
 deck.push(
@@ -387,8 +423,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.GRASS,
     EdgeType.GRASS,
-    EdgeType.BURG
-  )
+    EdgeType.BURG,
+  ),
 );
 deck.push(
   new Tile(
@@ -396,8 +432,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.GRASS,
     EdgeType.GRASS,
-    EdgeType.BURG
-  )
+    EdgeType.BURG,
+  ),
 );
 deck.push(
   new Tile(
@@ -405,8 +441,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.GRASS,
     EdgeType.GRASS,
-    EdgeType.BURG
-  )
+    EdgeType.BURG,
+  ),
 );
 
 deck.push(
@@ -415,8 +451,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.ROAD,
     EdgeType.BURG,
-    EdgeType.ROAD
-  )
+    EdgeType.ROAD,
+  ),
 );
 deck.push(
   new Tile(
@@ -424,8 +460,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.ROAD,
     EdgeType.BURG,
-    EdgeType.ROAD
-  )
+    EdgeType.ROAD,
+  ),
 );
 
 deck.push(
@@ -434,8 +470,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.ROAD,
     EdgeType.BURG,
-    EdgeType.ROAD
-  )
+    EdgeType.ROAD,
+  ),
 );
 deck.push(
   new Tile(
@@ -443,8 +479,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.ROAD,
     EdgeType.BURG,
-    EdgeType.ROAD
-  )
+    EdgeType.ROAD,
+  ),
 );
 deck.push(
   new Tile(
@@ -452,8 +488,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.ROAD,
     EdgeType.BURG,
-    EdgeType.ROAD
-  )
+    EdgeType.ROAD,
+  ),
 );
 
 // End of fourth row
@@ -464,8 +500,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.GRASS,
     EdgeType.BURG,
-    EdgeType.BURG
-  )
+    EdgeType.BURG,
+  ),
 );
 
 deck.push(
@@ -474,8 +510,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.GRASS,
     EdgeType.BURG,
-    EdgeType.BURG
-  )
+    EdgeType.BURG,
+  ),
 );
 deck.push(
   new Tile(
@@ -483,8 +519,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.GRASS,
     EdgeType.BURG,
-    EdgeType.BURG
-  )
+    EdgeType.BURG,
+  ),
 );
 deck.push(
   new Tile(
@@ -492,8 +528,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.GRASS,
     EdgeType.BURG,
-    EdgeType.BURG
-  )
+    EdgeType.BURG,
+  ),
 );
 
 deck.push(
@@ -502,8 +538,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.ROAD,
     EdgeType.BURG,
-    EdgeType.BURG
-  )
+    EdgeType.BURG,
+  ),
 );
 deck.push(
   new Tile(
@@ -511,8 +547,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.ROAD,
     EdgeType.BURG,
-    EdgeType.BURG
-  )
+    EdgeType.BURG,
+  ),
 );
 
 deck.push(
@@ -521,8 +557,8 @@ deck.push(
     EdgeType.BURG,
     EdgeType.ROAD,
     EdgeType.BURG,
-    EdgeType.BURG
-  )
+    EdgeType.BURG,
+  ),
 );
 
 // End of fifth row
@@ -533,8 +569,8 @@ deck.push(
     EdgeType.ROAD,
     EdgeType.ROAD,
     EdgeType.GRASS,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -542,8 +578,8 @@ deck.push(
     EdgeType.ROAD,
     EdgeType.ROAD,
     EdgeType.GRASS,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -551,8 +587,8 @@ deck.push(
     EdgeType.ROAD,
     EdgeType.ROAD,
     EdgeType.GRASS,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -560,8 +596,8 @@ deck.push(
     EdgeType.ROAD,
     EdgeType.ROAD,
     EdgeType.GRASS,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -569,8 +605,8 @@ deck.push(
     EdgeType.ROAD,
     EdgeType.ROAD,
     EdgeType.GRASS,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -578,8 +614,8 @@ deck.push(
     EdgeType.ROAD,
     EdgeType.ROAD,
     EdgeType.GRASS,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -587,8 +623,8 @@ deck.push(
     EdgeType.ROAD,
     EdgeType.ROAD,
     EdgeType.GRASS,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -596,8 +632,8 @@ deck.push(
     EdgeType.ROAD,
     EdgeType.ROAD,
     EdgeType.GRASS,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 
 deck.push(
@@ -606,8 +642,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.ROAD,
     EdgeType.ROAD,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -615,8 +651,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.ROAD,
     EdgeType.ROAD,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -624,8 +660,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.ROAD,
     EdgeType.ROAD,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -633,8 +669,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.ROAD,
     EdgeType.ROAD,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -642,8 +678,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.ROAD,
     EdgeType.ROAD,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -651,8 +687,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.ROAD,
     EdgeType.ROAD,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -660,8 +696,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.ROAD,
     EdgeType.ROAD,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -669,8 +705,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.ROAD,
     EdgeType.ROAD,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 deck.push(
   new Tile(
@@ -678,8 +714,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.ROAD,
     EdgeType.ROAD,
-    EdgeType.GRASS
-  )
+    EdgeType.GRASS,
+  ),
 );
 
 deck.push(
@@ -688,8 +724,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.ROAD,
     EdgeType.ROAD,
-    EdgeType.ROAD
-  )
+    EdgeType.ROAD,
+  ),
 );
 deck.push(
   new Tile(
@@ -697,8 +733,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.ROAD,
     EdgeType.ROAD,
-    EdgeType.ROAD
-  )
+    EdgeType.ROAD,
+  ),
 );
 deck.push(
   new Tile(
@@ -706,8 +742,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.ROAD,
     EdgeType.ROAD,
-    EdgeType.ROAD
-  )
+    EdgeType.ROAD,
+  ),
 );
 deck.push(
   new Tile(
@@ -715,8 +751,8 @@ deck.push(
     EdgeType.GRASS,
     EdgeType.ROAD,
     EdgeType.ROAD,
-    EdgeType.ROAD
-  )
+    EdgeType.ROAD,
+  ),
 );
 
 deck.push(
@@ -725,6 +761,6 @@ deck.push(
     EdgeType.ROAD,
     EdgeType.ROAD,
     EdgeType.ROAD,
-    EdgeType.ROAD
-  )
+    EdgeType.ROAD,
+  ),
 );
