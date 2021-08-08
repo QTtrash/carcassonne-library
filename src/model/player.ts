@@ -54,7 +54,7 @@ export default class Player {
    * @returns the string message, that there is already a tile
    */
   playCard(card: Tile, table: PlayTable, pos: Position) {
-    if (table.coordinates[pos.y][pos.x] !== "free") {
+    if (table.coordinates[pos.y][pos.x] === "free") {
       table.coordinates[pos.y][pos.x] = card;
     } else {
       return "Sorry this position already contains a tile ";
